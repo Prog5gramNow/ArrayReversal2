@@ -1,0 +1,32 @@
+public class ArrayReversal 
+{
+     
+    public static void main(String[] args) 
+    {
+    int[] numbers = {4,8,1,-2,3,5,-6,7,-8,9}; //the array is declared
+                                              //O(c) Time complexity
+    int count = 0; // count of iterations
+    System.out.println("Before the reversal:"); //before message
+    
+    for(int pos=0;pos<numbers.length;pos++){
+                                           //printing the before effect
+        System.out.print(numbers[pos]+" ");
+        System.out.println();
+    }//O(n) Time complexity
+    for(int i=0;i<(numbers.length/2);i++)
+    {
+        int temp = numbers[i];  //numbers[source]
+        numbers[i]=numbers[numbers.length-i-1]; // assigning destination to the source
+        numbers[numbers.length-i-1] = temp;       // the swap
+        count++;                                // count of iteration of code
+                                                // O(n) Time complexity
+    }
+    System.out.println("After the reversal:"); //after message
+    for(int pos=0;pos<numbers.length;pos++){ //printing the after effect
+        System.out.print(numbers[pos]+" "); // O(n) Time complexity
+        System.out.println();
+    }
+        System.out.println("In "+ count + " number of iterations of the code.");
+                                            //code approaches O(3n+c)-> O(n)
+    }
+}
